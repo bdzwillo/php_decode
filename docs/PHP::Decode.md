@@ -81,6 +81,20 @@ Newer php versions started to deprecate some features like obscure variants
 of the eval call used by malware scripts. So older malware might be rendered
 invalid when executed by more recent interpreters.
 
+Here is an example for a decoded malware file: [https://github.com/bdzwillo/php\_decode/blob/master/docs/example.md](https://github.com/bdzwillo/php_decode/blob/master/docs/example.md)
+
+## php\_decode
+
+The php\_decode tool included in the distribution, is a command line client
+for the [PHP::Decode](https://metacpan.org/pod/PHP::Decode) module and allows to select most of the features
+via command line options when run on a php script:
+
+    Decode an obfuscated php script:
+    > php_decode <php-file>
+
+    Just Show the parsed output:
+    > php_decode -p <php-file>
+
 # METHODS
 
 ## new
@@ -168,20 +182,24 @@ The accepted arguments are:
 
 # SEE ALSO
 
-PHP code parser [PHP::Decode::Parser](https://metacpan.org/pod/PHP::Decode::Parser),
-PHP ordered arrays [PHP::Decode::Array](https://metacpan.org/pod/PHP::Decode::Array) and
-PHP code transformer [PHP::Decode::Transformer](https://metacpan.org/pod/PHP::Decode::Transformer).
+The git repository for PHP::Decode on cpan is [https://github.com/bdzwillo/php\_decode](https://github.com/bdzwillo/php_decode).
+
+- PHP code parser [PHP::Decode::Parser](https://metacpan.org/pod/PHP::Decode::Parser)
+- PHP ordered arrays [PHP::Decode::Array](https://metacpan.org/pod/PHP::Decode::Array)
+- PHP code transformer [PHP::Decode::Transformer](https://metacpan.org/pod/PHP::Decode::Transformer)
+- php\_decode client [php\_decode](https://metacpan.org/pod/php_decode)
 
 Required by PHP::Decode::Array:
 Ordered Hash [Tie::IxHash](https://metacpan.org/pod/Tie::IxHash)
 
 Required by PHP::Decode::Transformer:
-Base64 encode/decode [MIME::Base64](https://metacpan.org/pod/MIME::Base64)
-Zlib compress/decompress [Compress::Zlib](https://metacpan.org/pod/Compress::Zlib)
-MD5 hash [Digest::MD5](https://metacpan.org/pod/Digest::MD5)
-SHA1 hash [Digest::SHA1](https://metacpan.org/pod/Digest::SHA1)
-HTML text encode/decode [HTML::Entities](https://metacpan.org/pod/HTML::Entities)
-URL encode/decode [URI::Escape](https://metacpan.org/pod/URI::Escape)
+
+- Base64 encode/decode [MIME::Base64](https://metacpan.org/pod/MIME::Base64)
+- Zlib compress/decompress [Compress::Zlib](https://metacpan.org/pod/Compress::Zlib)
+- MD5 hash [Digest::MD5](https://metacpan.org/pod/Digest::MD5)
+- SHA1 hash [Digest::SHA1](https://metacpan.org/pod/Digest::SHA1)
+- HTML text encode/decode [HTML::Entities](https://metacpan.org/pod/HTML::Entities)
+- URL encode/decode [URI::Escape](https://metacpan.org/pod/URI::Escape)
 
 Since many built-in PHP functions relate directly to their perl
 counterparts, perl is a good match for php emulation. (see for example

@@ -178,6 +178,20 @@ Newer php versions started to deprecate some features like obscure variants
 of the eval call used by malware scripts. So older malware might be rendered
 invalid when executed by more recent interpreters.
 
+Here is an example for a decoded malware file: L<https://github.com/bdzwillo/php_decode/blob/master/docs/example.md>
+
+=head2 php_decode
+
+The php_decode tool included in the distribution, is a command line client
+for the L<PHP::Decode> module and allows to select most of the features
+via command line options when run on a php script:
+
+   Decode an obfuscated php script:
+   > php_decode <php-file>
+
+   Just Show the parsed output:
+   > php_decode -p <php-file>
+
 =head1 METHODS
 
 =head2 new
@@ -300,20 +314,40 @@ The accepted arguments are:
 
 =head1 SEE ALSO
 
-PHP code parser L<PHP::Decode::Parser>,
-PHP ordered arrays L<PHP::Decode::Array> and
-PHP code transformer L<PHP::Decode::Transformer>.
+The git repository for PHP::Decode on cpan is L<https://github.com/bdzwillo/php_decode>.
+
+=over 4
+
+=item * PHP code parser L<PHP::Decode::Parser>
+
+=item * PHP ordered arrays L<PHP::Decode::Array>
+
+=item * PHP code transformer L<PHP::Decode::Transformer>
+
+=item * php_decode client L<php_decode>
+
+=back
 
 Required by PHP::Decode::Array:
 Ordered Hash L<Tie::IxHash>
 
 Required by PHP::Decode::Transformer:
-Base64 encode/decode L<MIME::Base64>
-Zlib compress/decompress L<Compress::Zlib>
-MD5 hash L<Digest::MD5>
-SHA1 hash L<Digest::SHA1>
-HTML text encode/decode L<HTML::Entities>
-URL encode/decode L<URI::Escape>
+
+=over 4
+
+=item * Base64 encode/decode L<MIME::Base64>
+
+=item * Zlib compress/decompress L<Compress::Zlib>
+
+=item * MD5 hash L<Digest::MD5>
+
+=item * SHA1 hash L<Digest::SHA1>
+
+=item * HTML text encode/decode L<HTML::Entities>
+
+=item * URL encode/decode L<URI::Escape>
+
+=back
 
 Since many built-in PHP functions relate directly to their perl
 counterparts, perl is a good match for php emulation. (see for example
